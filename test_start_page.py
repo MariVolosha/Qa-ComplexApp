@@ -7,47 +7,47 @@ from selenium.webdriver.common.by import By
 
 class TestStartPage:
 
-    # def test_start_page(self):
-    #     """Sample test"""
-    #     driver = webdriver.WebDriver(executable_path="./drivers/chromedriver")
-    #     driver.get("https://qa-complex-app-for-testing.herokuapp.com/")
-    #     username = driver.find_element(by=By.XPATH, value=".//input[@placeholder='Username']")
-    #     username.clear()
-    #     password = driver.find_element(by=By.XPATH, value=".//input[@placeholder='Password']")
-    #     password.clear()
-    #     button = driver.find_element(by=By.XPATH, value=".//button[text()='Sign In']")
-    #     button.click()
-    #     message = driver.find_element(by=By.XPATH, value=".//div[@class='alert alert-danger text-center']")
-    #     assert message.text =="Error"
-    #
+    @staticmethod
     def random_num(self):
         """Generate random number"""
         return str(random.choice(range(11111, 99999)))
 
-    #
-    # def test_start_invalid(self):
-    #     """
-    #     - Create driver
-    #     - Open start page
-    #     - Find Username field
-    #     - Put value
-    #     - Find Password field
-    #     - Put value
-    #     - Click on Sign In button
-    #     - Verify error message
-    #     """
-    #     driver = webdriver.WebDriver(executable_path="./drivers/chromedriver")
-    #     driver.get("https://qa-complex-app-for-testing.herokuapp.com/")
-    #     username = driver.find_element(by=By.XPATH, value=".//input[@placeholder='Username']")
-    #     username.clear()
-    #     username.send_keys(f'Username{self.random_num()}')
-    #     password = driver.find_element(by=By.XPATH, value=".//input[@placeholder='Password']")
-    #     password.clear()
-    #     password.send_keys(f'pwd{self.random_num()}')
-    #     button = driver.find_element(by=By.XPATH, value=".//button[text()='Sign In']")
-    #     button.click()
-    #     message = driver.find_element(by=By.XPATH, value=".//div[@class='alert alert-danger text-center']")
-    #     assert message.text =="Error"
+    def test_start_page(self):
+        """Sample test"""
+        driver = webdriver.WebDriver(executable_path="./drivers/chromedriver")
+        driver.get("https://qa-complex-app-for-testing.herokuapp.com/")
+        username = driver.find_element(by=By.XPATH, value=".//input[@placeholder='Username']")
+        username.clear()
+        password = driver.find_element(by=By.XPATH, value=".//input[@placeholder='Password']")
+        password.clear()
+        button = driver.find_element(by=By.XPATH, value=".//button[text()='Sign In']")
+        button.click()
+        message = driver.find_element(by=By.XPATH, value=".//div[@class='alert alert-danger text-center']")
+        assert message.text == "Error"
+
+    def test_start_invalid(self):
+        """
+        - Create driver
+        - Open start page
+        - Find Username field
+        - Put value
+        - Find Password field
+        - Put value
+        - Click on Sign In button
+        - Verify error message
+        """
+        driver = webdriver.WebDriver(executable_path="./drivers/chromedriver")
+        driver.get("https://qa-complex-app-for-testing.herokuapp.com/")
+        username = driver.find_element(by=By.XPATH, value=".//input[@placeholder='Username']")
+        username.clear()
+        username.send_keys(f'Username{self.random_num()}')
+        password = driver.find_element(by=By.XPATH, value=".//input[@placeholder='Password']")
+        password.clear()
+        password.send_keys(f'pwd{self.random_num()}')
+        button = driver.find_element(by=By.XPATH, value=".//button[text()='Sign In']")
+        button.click()
+        message = driver.find_element(by=By.XPATH, value=".//div[@class='alert alert-danger text-center']")
+        assert message.text == "Error"
 
     def test_register(self):
         """
